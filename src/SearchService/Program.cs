@@ -16,6 +16,7 @@ builder.Services.AddHttpClient<AuctionSvcHttpClient>()
     .AddPolicyHandler(GetPolicy()); //retry until success
 builder.Services.AddMassTransit(x=> 
 {
+    //must declare this namespace
     x.AddConsumersFromNamespaceContaining<AuctionCreatedConsumer>();
     x.SetEndpointNameFormatter(new KebabCaseEndpointNameFormatter("search", false));
     //using rabbit mq
@@ -25,6 +26,7 @@ builder.Services.AddMassTransit(x=>
         {
             //retry for 5 times with 5 second interval
             e.UseMessageRetry(r => r.Interval(5,5));
+            //must declare AddCOnsumersFromNamespaceContaining<AuctionCreatedConsumer>
             e.ConfigureConsumer<AuctionCreatedConsumer>(context);
         });
         cfg.ConfigureEndpoints(context);

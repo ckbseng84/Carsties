@@ -89,7 +89,9 @@ namespace AuctionService.Controllers
             auction.Item.Color = updateAuctionDto.Color ?? auction.Item.Color;
             auction.Item.Mileage = updateAuctionDto.Mileage ?? auction.Item.Mileage;
             auction.Item.Year = updateAuctionDto.Year ?? auction.Item.Year;
-     
+            //publish to mass transit for this update
+            await _publishEndpoint.Publish(_mapper.Map<AuctionUpdated>(auction));
+
             var result = await _context.SaveChangesAsync() > 0 ;
 
             if (result) return Ok();
@@ -105,6 +107,8 @@ namespace AuctionService.Controllers
             //todo check seller == username
 
             _context.Auctions.Remove(auction);
+            //publish to mass transit for remove this auction
+            await _publishEndpoint.Publish<AuctionDeleted>(new {Id = auction.Id.ToString()});
             
             var result = await _context.SaveChangesAsync()> 0;
 
