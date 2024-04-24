@@ -15,6 +15,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityService", "src\Iden
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GatewayService", "src\GatewayService\GatewayService.csproj", "{67AC36DF-24CE-40A6-A9A7-1B28236CC213}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{A41ADE70-D76F-4C9E-B079-3369B9C35AF8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuctionService.UnitTests", "tests\AuctionService.UnitTests\AuctionService.UnitTests.csproj", "{70B773C4-24B1-4643-AFA2-0F5AB4AE495E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuctionService.IntegrationTests", "tests\AuctionService.IntegrationTests\AuctionService.IntegrationTests.csproj", "{D2E4AAF1-BD35-4454-A5A1-996896A58065}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -41,6 +47,14 @@ Global
 		{67AC36DF-24CE-40A6-A9A7-1B28236CC213}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{67AC36DF-24CE-40A6-A9A7-1B28236CC213}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{67AC36DF-24CE-40A6-A9A7-1B28236CC213}.Release|Any CPU.Build.0 = Release|Any CPU
+		{70B773C4-24B1-4643-AFA2-0F5AB4AE495E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70B773C4-24B1-4643-AFA2-0F5AB4AE495E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70B773C4-24B1-4643-AFA2-0F5AB4AE495E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70B773C4-24B1-4643-AFA2-0F5AB4AE495E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D2E4AAF1-BD35-4454-A5A1-996896A58065}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2E4AAF1-BD35-4454-A5A1-996896A58065}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2E4AAF1-BD35-4454-A5A1-996896A58065}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2E4AAF1-BD35-4454-A5A1-996896A58065}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -51,5 +65,7 @@ Global
 		{DF93BBBA-F807-4D3B-A50C-831CACEF3B69} = {065BC6AA-1811-4CB3-8855-17EE090A2CEE}
 		{E5481752-674B-4BA4-91B3-255376255CE2} = {065BC6AA-1811-4CB3-8855-17EE090A2CEE}
 		{67AC36DF-24CE-40A6-A9A7-1B28236CC213} = {065BC6AA-1811-4CB3-8855-17EE090A2CEE}
+		{70B773C4-24B1-4643-AFA2-0F5AB4AE495E} = {A41ADE70-D76F-4C9E-B079-3369B9C35AF8}
+		{D2E4AAF1-BD35-4454-A5A1-996896A58065} = {A41ADE70-D76F-4C9E-B079-3369B9C35AF8}
 	EndGlobalSection
 EndGlobal
