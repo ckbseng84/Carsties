@@ -21,6 +21,7 @@ namespace AuctionService.IntegrationTests.Util
             var scopedServices = scope.ServiceProvider;
             var db = scopedServices.GetRequiredService<AuctionDbContext>();
             db.Database.Migrate();
+            //could be violated single responsibility 
             DBHelper.InitDbForTests(db);
 
         }
