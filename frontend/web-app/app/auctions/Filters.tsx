@@ -1,5 +1,5 @@
 import { useParamsStore } from '@/hooks/useParamsStore';
-import { Button, ButtonGroup } from 'flowbite-react';
+import { Button } from 'flowbite-react';
 import React from 'react'
 import { AiOutlineClockCircle, AiOutlineSortAscending } from 'react-icons/ai';
 import { BsFillStopCircleFill, BsStopwatchFill } from 'react-icons/bs';
@@ -51,7 +51,7 @@ export default function Filters() {
     <div className='flex justify-between items-center mb-4'>
         <div>
             <span className='uppercase text-sm text-gray-500 mr-2'>Filter By</span>
-            <ButtonGroup>
+            <Button.Group>
                 {filterButtons.map(({label, icon: Icon, value})=> (
                     <Button
                         key={value}
@@ -63,11 +63,11 @@ export default function Filters() {
                         {label}
                     </Button>
                 ))}
-            </ButtonGroup>
+            </Button.Group>
         </div>
         <div>
             <span className='uppercase text-sm text-gray-500 mr-2'>Order By</span>
-            <ButtonGroup>
+            <Button.Group>
                 {orderButtons.map(({label, icon: Icon, value})=> (
                     <Button
                         key={value}
@@ -79,11 +79,11 @@ export default function Filters() {
                         {label}
                     </Button>
                 ))}
-            </ButtonGroup>
+            </Button.Group>
         </div>
         <div>
             <span className='uppercase text-sm text-gray-500 mr-2'>Page Size</span>
-            <ButtonGroup>
+            <Button.Group>
                 {pageSizeButton.map((value, i)=> (
                     <Button key={i} onClick={() => setParams({pageSize: value})}
                         color={`${pageSize === value ? 'red' : 'gray'}`}
@@ -92,7 +92,7 @@ export default function Filters() {
                         {value}
                     </Button>
                 ))}
-            </ButtonGroup>
+            </Button.Group>
         </div>
     </div>
   )
