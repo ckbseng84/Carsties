@@ -50,7 +50,7 @@ namespace AuctionService.Controllers
             //add to db, but not yet commit
             _auctionRepository.AddAuction(auction);
             //map to AuctionDto
-            var newAuction = _mapper.Map<AuctionDto>(auction);
+            var newAuction = _mapper.Map<AuctionDto>(auction); 
 
             //publish the new AuctionDto
             await _publishEndpoint.Publish(_mapper.Map<AuctionCreated>(newAuction));

@@ -2,9 +2,6 @@
 import React, { useState } from 'react'
 import { updateAuctionTest } from '../actions/auctionActions';
 import { Button } from 'flowbite-react';
-import { AiFillAccountBook } from 'react-icons/ai';
-import { BiLibrary } from 'react-icons/bi';
-import { HiUserCircle } from 'react-icons/hi2';
 
 export default function AuthTest() {
     
