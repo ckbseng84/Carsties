@@ -14,17 +14,18 @@ COPY src/BiddingService/BiddingService.csproj src/BiddingService/BiddingService.
 COPY tests/AuctionService.UnitTests/AuctionService.UnitTests.csproj tests/AuctionService.UnitTests/AuctionService.UnitTests.csproj
 COPY tests/AuctionService.IntegrationTests/AuctionService.IntegrationTests.csproj tests/AuctionService.IntegrationTests/AuctionService.IntegrationTests.csproj
 
+# restore p
 # restore package dependencies
 RUN dotnet restore Carsties.sln
 
 # Copy the app folder over
-COPY src/AuctionService src/AuctionService
+COPY src/BiddingService src/BiddingService
 COPY src/Contracts src/Contracts
-WORKDIR /app/src/AuctionService
+WORKDIR /app/src/BiddingService
 RUN dotnet publish -c release -o /app/src/out
 
 # build runtime image
 FROM mcr.microsoft.com/dotnet/aspnet:7.0.16
 WORKDIR /app
 COPY --from=build /app/src/out .
-ENTRYPOINT [ "dotnet","AuctionService.dll" ]
+ENTRYPOINT [ "dotnet","BiddingService.dll" ]
