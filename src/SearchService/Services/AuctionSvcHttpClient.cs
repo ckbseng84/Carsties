@@ -1,6 +1,4 @@
 using MongoDB.Entities;
-using SearchService.Models;
-
 namespace SearchService.Services
 {
     public class AuctionSvcHttpClient
