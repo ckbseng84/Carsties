@@ -2,7 +2,7 @@ using System.Net;
 using MassTransit;
 using Polly;
 using Polly.Extensions.Http;
-using SearchService.Consumers;
+using SearchService;
 using SearchService.Data;
 using SearchService.Services;
 

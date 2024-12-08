@@ -3,7 +3,7 @@ using Contracts;
 using MassTransit;
 using MongoDB.Entities;
 
-namespace SearchService.Consumers
+namespace SearchService
 {
     //create mass transit consumer for AuctionCreated
     public class AuctionCreatedConsumer : IConsumer<AuctionCreated>
