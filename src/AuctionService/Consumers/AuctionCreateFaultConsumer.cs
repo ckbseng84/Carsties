@@ -1,7 +1,7 @@
 using Contracts;
 using MassTransit;
 
-namespace AuctionService.Consumers
+namespace AuctionService
 {
     //handle for fault on auction created
     public class AuctionCreateFaultConsumer : IConsumer<Fault<AuctionCreated>>
