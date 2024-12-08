@@ -4,7 +4,7 @@ using MassTransit;
 namespace AuctionService.Consumers
 {
     //handle for fault on auction created
-    public class AuctionCreatefFaultConsumer : IConsumer<Fault<AuctionCreated>>
+    public class AuctionCreateFaultConsumer : IConsumer<Fault<AuctionCreated>>
     {
         public async Task Consume(ConsumeContext<Fault<AuctionCreated>> context)
         {
