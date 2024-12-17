@@ -20,13 +20,13 @@ COPY tests/AuctionService.IntegrationTests/AuctionService.IntegrationTests.cspro
 RUN dotnet restore Carsties.sln
 
 # Copy the app folder over
-COPY src/IdentityService src/IdentityService
+COPY src/NotificationService src/NotificationService
 COPY src/Contracts src/Contracts
-WORKDIR /app/src/IdentityService
+WORKDIR /app/src/NotificationService
 RUN dotnet publish -c release -o /app/src/out
 
 # build runtime image
 FROM mcr.microsoft.com/dotnet/aspnet:7.0.16
 WORKDIR /app
 COPY --from=build /app/src/out .
-ENTRYPOINT [ "dotnet","IdentityService.dll" ]
+ENTRYPOINT [ "dotnet","NotificationService.dll" ]
