@@ -7,6 +7,7 @@ import DetailedSpecs from './DetailedSpecs'
 import { getCurrentUser } from '@/app/actions/authAction'
 import EditButton from './EditButton'
 import DeleteButton from './DeleteButton'
+import BidList from './BidList'
 
 export default async function Details({params}: {params: {id: string}}) {
   const data = await getDetailedViewData(params.id)
@@ -34,9 +35,7 @@ export default async function Details({params}: {params: {id: string}}) {
         <div className='w-full bg-gray-200 aspect-h-10 aspect-w-16 rounded-lg overflow-hidden'>
           <CarImage imageUrl={data.imageUrl}></CarImage>
         </div>
-        <div className='border-2 rounded-lg p-2 bg-gray-100'>
-          <Heading title='Bids' subtitle={''} center={false}/>
-        </div>
+        <BidList user={user} auction={data} />
       </div> 
       <div className='mt-e grid grid-cols-1 rounded-lg'>
         <DetailedSpecs auction={data}/>

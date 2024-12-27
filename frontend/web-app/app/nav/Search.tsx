@@ -28,15 +28,9 @@ export default function Search() {
             value={searchValue}
             onChange={onChanged}
             type="text"
-            placeholder='Search for cars by make, model and colr'
+            placeholder='Search for cars by make, model and color'
             className='
-                flex-grow
-                pl-5
-                bg-transparent
-                focus:outline-none
-                border-transparent
-                focus:border-transparent
-                focus:ring-0
+                input-custom
                 text-sm
                 text-gray-600
             '
